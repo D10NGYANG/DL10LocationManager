@@ -1,7 +1,8 @@
 # DL10LocationManager
 一个基于Android原生定位API的管理工具，倾向于模糊网络定位，而不是GPS定位，主要为了app只是需要根据定位获得当地天气信息的功能制作。不适合精准定位！对于精准定位需求，高德和百度才是王道
 
-# 说明链接：https://blog.csdn.net/sinat_38184748/article/details/89280289
+# 说明链接：
+CSDN：https://blog.csdn.net/sinat_38184748/article/details/89280289
 
 
 # 前言
