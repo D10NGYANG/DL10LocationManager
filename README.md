@@ -41,7 +41,7 @@ Step 2. Add the dependency
 
 ```java
 	dependencies {
-	        implementation 'com.github.D10NGYANG:DL10LocationManager:1.0.1'
+	        implementation 'com.github.D10NGYANG:DL10LocationManager:1.0.2'
 	}
 ```
 ## 初始化
