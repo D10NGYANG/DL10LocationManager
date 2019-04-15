@@ -41,7 +41,7 @@ Step 2. Add the dependency
 
 ```java
 	dependencies {
-	        implementation 'com.github.D10NGYANG:DL10LocationManager:1.0.0'
+	        implementation 'com.github.D10NGYANG:DL10LocationManager:1.0.1'
 	}
 ```
 ## 初始化
@@ -130,6 +130,12 @@ DLocationUtils.init(mContext);
      * 没有定位的系统服务
      */
     public static final int NO_LOCATIONMANAGER = 3;
+    
+    /**
+     * 定位模式只有GPS工作；只能在有网络定位的条件下工作
+     * 所以需要去切换定位模式到【高精确度】或【节电】
+     */
+    public static final int ONLY_GPS_WORK = 4;
 ```
 在DLocationTools类里还有两个方法，分别跳转系统App设置界面和系统GPS设置界面，如有需要可以直接调用；
 ```java
@@ -145,6 +151,10 @@ DLocationUtils.init(mContext);
                 txt.setText("没有可用的定位提供器或尚未打开定位");
                 // TODO: 2019/4/13 打开定位
                 DLocationTools.openGpsSettings(mContext);
+                break;
+	    case ONLY_GPS_WORK:
+                // TODO: 2019/4/15 切换定位模式到【高精确度】或【节电】
+                DLocationTools.openGpsSettings(mContext, GO_TO_GPS);
                 break;
         }
 ```
