@@ -23,10 +23,10 @@ public class DLocationTools {
     /**
      * 打开Gps设置界面
      */
-    public static void openGpsSettings(Context context) {
+    public static void openGpsSettings(Context context, int what) {
         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
+        ((Activity) context).startActivityForResult(intent, what);
     }
 
     /**

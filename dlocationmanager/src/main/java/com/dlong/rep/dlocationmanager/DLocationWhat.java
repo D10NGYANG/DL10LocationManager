@@ -28,6 +28,11 @@ public class DLocationWhat {
     public static final int NO_LOCATIONMANAGER = 3;
 
     /**
+     * 没有定位的系统服务
+     */
+    public static final int ONLY_GPS_WORK = 4;
+
+    /**
      * 打开位置提供器
      */
     public static final int STATUS_ENABLE = 10;

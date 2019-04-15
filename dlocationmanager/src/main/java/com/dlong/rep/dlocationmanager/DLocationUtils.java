@@ -149,12 +149,9 @@ public class DLocationUtils {
         if (providers.contains( LocationManager.NETWORK_PROVIDER )) {
             Log.i(TAG, "使用网络定位");
             provider = LocationManager.NETWORK_PROVIDER;
-        } else if (providers.contains( LocationManager.GPS_PROVIDER )) {
-            Log.i( TAG, "使用GPS定位" );
-            provider = LocationManager.GPS_PROVIDER;
         } else {
-            Log.i( TAG, "没有可用的位置提供器" );
-            return DLocationWhat.NO_LOCATIONMANAGER;
+            Log.i( TAG, "定位模式在仅限设备" );
+            return DLocationWhat.ONLY_GPS_WORK;
         }
 
         // 获取上一次的定位记录
