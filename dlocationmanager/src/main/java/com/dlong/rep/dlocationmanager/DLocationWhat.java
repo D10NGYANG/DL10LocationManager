@@ -28,7 +28,8 @@ public class DLocationWhat {
     public static final int NO_LOCATIONMANAGER = 3;
 
     /**
-     * 没有定位的系统服务
+     * 定位模式只有GPS工作；只能在有网络定位的条件下工作
+     * 所以需要去切换定位模式到【高精确度】或【节电】
      */
     public static final int ONLY_GPS_WORK = 4;
 
