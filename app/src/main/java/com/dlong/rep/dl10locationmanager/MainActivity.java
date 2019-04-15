@@ -15,6 +15,7 @@ import com.dlong.rep.dlocationmanager.OnLocationChangeListener;
 
 import static com.dlong.rep.dlocationmanager.DLocationWhat.NO_LOCATIONMANAGER;
 import static com.dlong.rep.dlocationmanager.DLocationWhat.NO_PROVIDER;
+import static com.dlong.rep.dlocationmanager.DLocationWhat.ONLY_GPS_WORK;
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext = this;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private double mLat;
     private double mLng;
+
+    private final static int GO_TO_GPS = 150;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case NO_PROVIDER:
-                txt.setText("没有可用的定位提供器或尚未打开定位");
+                txt.setText("尚未打开定位");
                 // TODO: 2019/4/13 打开定位
-                DLocationTools.openGpsSettings(mContext);
+                DLocationTools.openGpsSettings(mContext, GO_TO_GPS);
+                break;
+            case ONLY_GPS_WORK:
+                // TODO: 2019/4/15 切换定位模式到【高精确度】或【节电】
+                DLocationTools.openGpsSettings(mContext, GO_TO_GPS);
                 break;
         }
     }
